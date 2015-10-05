@@ -1,0 +1,218 @@
+
+R version 3.2.2 (2015-08-14) -- "Fire Safety"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.66 (6996) x86_64-apple-darwin13.4.0]
+
+[Geschiedenis teruggehaald van /Users/Saar/.Rapp.history]
+
+2015-10-04 18:19:00.320 R[212:1723] *** WARNING: Method convertPointFromBase: in class NSView is deprecated on 10.7 and later. It should not be used in new applications. 
+> getwd()
+[1] "/Users/Saar"
+> setwd(/Users/Saar/temp/FOD)
+Error: unexpected '/' in "setwd(/"
+> setwd("/Users/Saar/temp/FOD")
+> getwd()
+[1] "/Users/Saar/temp/FOD"
+> ls()
+character(0)
+> dir()
+ [1] "crimi.csv"                                           
+ [2] "crimidata.csv"                                       
+ [3] "crimidata.numbers"                                   
+ [4] "Geregistr._crim.2011-2012-globale categorien.csv"    
+ [5] "Geregistr._crim.2011-2012-globale categorien.numbers"
+ [6] "Geregistreerde_crimi_indeling.csv"                   
+ [7] "Geregistreerde_crimi_indeling.numbers"               
+ [8] "Gevoel.txt"                                          
+ [9] "Krantendatabase.csv"                                 
+[10] "Krantendatabase.numbers"                             
+[11] "Tdata.txt"                                           
+[12] "Udata.txt"                                           
+> setwd("/Users/Saar/temp")
+> ls()
+character(0)
+> dir()
+ [1] "CBS.sh"                             
+ [2] "chol.txt"                           
+ [3] "FOD"                                
+ [4] "genesis"                            
+ [5] "genesis.hist"                       
+ [6] "greeting.sh"                        
+ [7] "nytimes_student_protest_result.json"
+ [8] "pattern"                            
+ [9] "query_nytimes_API.sh"               
+[10] "reviews.Lost-in-Translation.csv.txt"
+[11] "test"                               
+> setwd(FOD)
+Error in setwd(FOD) : object 'FOD' not found
+> setwd("/Users/Saar/temp/FOD")
+> Broncrimi <-(Gereg, Regparool, Regpolitie, RegAT5)
+Error: unexpected ',' in "Broncrimi <-(Gereg,"
+> Broncrimi <-c(Gereg, Regparool, Regpolitie, RegAT5)
+Error: object 'Gereg' not found
+> Broncrimi <- c(Gereg, Regparool, Regpolitie, RegAT5)
+Error: object 'Gereg' not found
+> Mishandeling <- c (5.075, 21, 8, 37)
+> Mishandeling
+[1]  5.075 21.000  8.000 37.000
+> Mishandeling <- c(5.1, 21, 8, 37)
+> Mishandeling
+[1]  5.1 21.0  8.0 37.0
+> Diefstal <- c(73.4, 54, 24, 49)
+> Broncrimi <- c("Gereg, RegParool, RegPolitie, RegAT5")
+> Broncrimi
+[1] "Gereg, RegParool, RegPolitie, RegAT5"
+> Crimidata <- cbind(Broncrimi, Mishandeling, Diefstal)
+> Crimidata
+     Broncrimi                              Mishandeling Diefstal
+[1,] "Gereg, RegParool, RegPolitie, RegAT5" "5.1"        "73.4"  
+[2,] "Gereg, RegParool, RegPolitie, RegAT5" "21"         "54"    
+[3,] "Gereg, RegParool, RegPolitie, RegAT5" "8"          "24"    
+[4,] "Gereg, RegParool, RegPolitie, RegAT5" "37"         "49"    
+> Crimidata1 <- rbind(Broncrimi, Mishandeling, Diefstal)
+> Crimidata1
+             [,1]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "5.1"                                 
+Diefstal     "73.4"                                
+             [,2]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "21"                                  
+Diefstal     "54"                                  
+             [,3]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "8"                                   
+Diefstal     "24"                                  
+             [,4]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "37"                                  
+Diefstal     "49"                                  
+> hist(Crimidata)
+Error in hist.default(Crimidata) : 'x' must be numeric
+> hist(Crimidata1)
+Error in hist.default(Crimidata1) : 'x' must be numeric
+> Broncrimi <- c("Gereg", "RegParool", "Regpolitie", "RegAT5")
+> Broncrimi
+[1] "Gereg"      "RegParool"  "Regpolitie" "RegAT5"    
+> Crimidata
+     Broncrimi                              Mishandeling Diefstal
+[1,] "Gereg, RegParool, RegPolitie, RegAT5" "5.1"        "73.4"  
+[2,] "Gereg, RegParool, RegPolitie, RegAT5" "21"         "54"    
+[3,] "Gereg, RegParool, RegPolitie, RegAT5" "8"          "24"    
+[4,] "Gereg, RegParool, RegPolitie, RegAT5" "37"         "49"    
+> Crimidata1
+             [,1]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "5.1"                                 
+Diefstal     "73.4"                                
+             [,2]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "21"                                  
+Diefstal     "54"                                  
+             [,3]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "8"                                   
+Diefstal     "24"                                  
+             [,4]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "37"                                  
+Diefstal     "49"                                  
+> Crimidata <- cbind(Broncrimi, Mishandeling, Diefstal)
+> print(Crimidata)
+     Broncrimi    Mishandeling Diefstal
+[1,] "Gereg"      "5.1"        "73.4"  
+[2,] "RegParool"  "21"         "54"    
+[3,] "Regpolitie" "8"          "24"    
+[4,] "RegAT5"     "37"         "49"    
+> hist(Crimidata)
+Error in hist.default(Crimidata) : 'x' must be numeric
+> print(Crimidata1)
+             [,1]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "5.1"                                 
+Diefstal     "73.4"                                
+             [,2]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "21"                                  
+Diefstal     "54"                                  
+             [,3]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "8"                                   
+Diefstal     "24"                                  
+             [,4]                                  
+Broncrimi    "Gereg, RegParool, RegPolitie, RegAT5"
+Mishandeling "37"                                  
+Diefstal     "49"                                  
+> Crimidata
+     Broncrimi    Mishandeling Diefstal
+[1,] "Gereg"      "5.1"        "73.4"  
+[2,] "RegParool"  "21"         "54"    
+[3,] "Regpolitie" "8"          "24"    
+[4,] "RegAT5"     "37"         "49"    
+> plot(Crimidata)
+Error in plot.window(...) : need finite 'xlim' values
+In addition: Warning messages:
+1: In xy.coords(x, y, xlabel, ylabel, log) : NAs introduced by coercion
+2: In min(x) : no non-missing arguments to min; returning Inf
+3: In max(x) : no non-missing arguments to max; returning -Inf
+> dotchart(Crimidata)
+Error in dotchart(Crimidata) : 'x' must be a numeric vector or matrix
+> summary(Crimidata)
+      Broncrimi Mishandeling Diefstal
+ Gereg     :1   21 :1        24  :1  
+ RegAT5    :1   37 :1        49  :1  
+ RegParool :1   5.1:1        54  :1  
+ Regpolitie:1   8  :1        73.4:1  
+> ?mosaicplot
+starting httpd help server ... done
+> mosaicplot(Crimidata)
+Error in tabulate(Ind[, dimd]) : 'bin' must be numeric or a factor
+> Crimitest <- cbind(Mishandeling, Diefstal)
+> Crimitest
+     Mishandeling Diefstal
+[1,]          5.1     73.4
+[2,]         21.0     54.0
+[3,]          8.0     24.0
+[4,]         37.0     49.0
+> hist(Crimitest)
+> plot(Crimitest)
+> print(Crimitest)
+     Mishandeling Diefstal
+[1,]          5.1     73.4
+[2,]         21.0     54.0
+[3,]          8.0     24.0
+[4,]         37.0     49.0
+> AllData <- list(Crimitest= Crimitest)
+> print AllData
+Error: unexpected symbol in "print AllData"
+> AllData
+$Crimitest
+     Mishandeling Diefstal
+[1,]          5.1     73.4
+[2,]         21.0     54.0
+[3,]          8.0     24.0
+[4,]         37.0     49.0
+
+> hist(AllData)
+Error in hist.default(AllData) : 'x' must be numeric
+> summary(AllData)
+          Length Class  Mode   
+Crimitest 8      -none- numeric
+> ls()
+[1] "AllData"      "Broncrimi"    "Crimidata"    "Crimidata1"   "Crimitest"   
+[6] "Diefstal"     "Mishandeling"
+> 

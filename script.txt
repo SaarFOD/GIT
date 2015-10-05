@@ -1,0 +1,30 @@
+Broncrimi <- c(“Gereg”, “RegParool”, “RegPolitie”, “RegAT5”)
+
+Mishandeling <- c(5.075, 21, 8, 37)
+
+Diefstal <-c(73.435, 54, 24, 49)
+
+>Crimidata <- cbind(Broncrimi, Mishandeling, Diefstal) 
+
+>Crimidata
+>hist(Crimidata) 
+!!ERROR, 'x' must be numeric!!
+
+
+
+>Broncrimi <-factor(c("Gereg", "GeregParool", "GeregPolitie", "GeregAT5"))
+>Crimidata1 <- data.frame(Broncrimi, Mishandeling, Diefstal)
+
+>Crimidata1  
+!!mooier!!
+
+
+!!enkele mislukte pogingen!!
+> Gereg <- c(5.1, 73.4)
+> GeregParool <- c(21, 54)
+> GeregPolitie <- c(8, 24)
+> GeregAT5 <- c(37, 49)
+>AllData <- list(Gereg = Gereg, GeregParool = GeregParool, GeregPolitie = GeregPolitie, GeregAT5 = GeregAT5)
+
+> Crimidata1 <- rbind(Broncrimi, Mishandeling, Diefstal)
+
